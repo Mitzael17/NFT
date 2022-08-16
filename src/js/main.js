@@ -1,10 +1,8 @@
-import { support_format_webp } from "./modules/functions.js";
 import Parallax from "parallax-js";
 import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js';
 
 const burger = document.querySelector('.header__burger');
 
-support_format_webp();
 
 document.querySelectorAll('.nav-refer').forEach( refer => {
 
