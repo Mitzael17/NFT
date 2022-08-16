@@ -1,0 +1,175 @@
+.MiCalendar {
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex-direction: column;
+    table {
+        border-collapse: separate;
+        border-spacing: 3px 3px;
+        min-width: 300px;
+        table-layout: fixed;
+    }
+
+    tbody {
+        display: none;
+
+        &.active {
+            display: table-row-group;
+        }
+    }
+
+    th {
+        font-weight: 500;
+    }
+
+    th, td {
+        padding: 10px;
+        width: 14.25%;
+        font-size: 16px;
+        
+    }
+    td {
+        text-align: center;
+        cursor: pointer;
+        transition: .15s all;
+        border-radius: 50%;
+        &:hover {
+            background: #1a3b4e6c;
+        }
+    }
+
+    &__header {
+        padding: 10px 20px;
+    }
+
+    &__narrow {
+        cursor: pointer;
+        color: #303e4e;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__year {
+        text-align: right;
+        margin-bottom: 20px;
+        cursor: pointer;
+        color: #303e4e;
+        font-weight: 500;
+    }
+
+    &__month {
+        cursor: pointer;
+    }
+    
+    &__overDate {
+        color: rgba(0, 0, 0, 0.384);
+    }
+
+    &__unreachable {
+        color: rgba(0, 0, 0, 0.384);
+        cursor: default;
+    }
+
+    &__fullBlock {
+        background-color: white;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 40px 30px;
+        display: none;
+        overflow: auto;
+
+        scrollbar-width: thin;
+        scrollbar-color: #81b4ff #031255;
+          
+          
+          
+        &::-webkit-scrollbar {
+        height: 12px;
+        width: 7px;
+        }
+        &::-webkit-scrollbar-track {
+        background: #031255;
+        }
+        &::-webkit-scrollbar-thumb {
+        background-color: #81b4ff;
+        border-radius: 5px;
+        border: 3px solid #031255;
+        }
+        &.active {
+            display: block;
+        }
+
+    }
+
+    &__fullWrapper {
+        display: flex;
+        
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin: -40px auto 0;
+        transform: translateX(-20px);
+        & > div {
+            margin: 40px 0 0 40px;
+            
+            font-size: 20px;
+        }
+    }
+
+    &__reachable {
+        cursor: pointer;
+        &--year,
+        &--month {
+            transition: .3s color;
+            color: #000;
+            &:hover {
+                color: #0f5cb4;
+            }
+        }
+
+    }
+
+
+    .blocked {
+        color: #0000004d;
+        cursor: default;
+    }
+
+    &__unreachable--td {
+        color: #fa4d4d8c;
+        cursor: default !important;
+        &:hover {
+            background: transparent !important;
+        }
+    }
+
+    &__today {
+        color: white;
+        background: #052a3b;
+        font-weight: 600;
+    }
+
+    &__chosenDay {
+        color: white;
+        background: #0f5cb4;
+        &.MiCalendar__overDate {
+            background: #0f5cb48e;
+        }
+    }
+
+
+    &__month {
+        font-size: 18px;
+        color: #0f5cb4;
+        font-weight: 500;
+    }
+}
